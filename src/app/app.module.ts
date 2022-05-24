@@ -10,7 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
 import { AlertComponent } from './_components';
-import { HomeComponent } from './home';
+import { HomeComponent } from './home';;
+import { SidenavWidgetComponent } from './features/sidenav-widget/sidenav-widget.component';
+import { FooterWidgetComponent } from './features/footer-widget/footer-widget.component'
 
 @NgModule({
     imports: [
@@ -22,8 +24,10 @@ import { HomeComponent } from './home';
     declarations: [
         AppComponent,
         AlertComponent,
-        HomeComponent
-    ],
+        HomeComponent,
+        SidenavWidgetComponent
+,
+        FooterWidgetComponent    ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

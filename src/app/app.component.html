@@ -1,24 +1,38 @@
-﻿<!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+﻿<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+        <sidenav-widget></sidenav-widget>
+    <!-- End of Sidebar -->
+  
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+  
+      <!-- Main Content -->
+      <div id="content">
+  
+        <!-- Topbar -->
+        <!-- nav -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="user">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+                <a class="nav-item nav-link" (click)="logout()">Logout</a>
+            </div>
+        </nav>
+        <!-- End of Topbar -->
+  
+        <!-- Begin Page Content -->
+        <div class="app-container container-fluid" id="mfe-content" class="mfe-content"[ngClass]="{ 'bg-light': user }">
+            <alert></alert>
+            <router-outlet></router-outlet>
+        </div>
+      </div>
+      <!-- End of Main Content -->
+  
+      <!-- Footer -->
+        <footer-widget></footer-widget>
+      <!-- End of Footer -->
     </div>
-</nav>
+  </div>
 
-<!-- main app container -->
-<div class="app-container" [ngClass]="{ 'bg-light': user }">
-    <alert></alert>
-    <router-outlet></router-outlet>
-</div>
-
-<!-- credits -->
-<div class="text-center mt-4">
-    <p>
-        <a href="https://jasonwatmore.com/post/2020/04/28/angular-9-user-registration-and-login-example-tutorial" target="_top">Angular 9 - User Registration and Login Example & Tutorial</a>
-    </p>
-    <p>
-        <a href="https://jasonwatmore.com" target="_top">JasonWatmore.com</a>
-    </p>
-</div>
